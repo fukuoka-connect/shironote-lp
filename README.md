@@ -3,7 +3,7 @@
 宇美町の出張整体「しろのて」（施術者：白垣誠弥）のランディングページ サンプルです。
 ヒアリングシートをもとに FUKUOKA CONNECT が制作。
 
-- **公開URL（GitHub Pages）**: デプロイ後に追記
+- **公開URL（GitHub Pages）**: https://sofurenumi-glitch.github.io/shironote-lp/
 - **配色**: あたたかい白 × 水色・青 × 砂色（温かみ・アットホーム）
 - **CV**: Instagram / LINE 予約
 - **SEO**: 宇美町 整体 / 宇美町 マッサージ
