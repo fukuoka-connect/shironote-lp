@@ -224,6 +224,28 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.5;letter-spac
 .referral .ref-lead b{font-weight:700;background:linear-gradient(transparent 58%,var(--cream-3) 58%)}
 .referral .ref-note{margin-top:1.1em;font-size:.86rem;color:var(--ink-soft)}
 
+/* ============ 出張エリア ============ */
+.area{background:var(--cream)}
+.area-grid{display:grid;grid-template-columns:1fr;gap:22px;max-width:900px;margin-inline:auto}
+.area-main{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(24px,3.5vw,38px);display:grid;grid-template-columns:1fr;gap:clamp(20px,3.5vw,34px);align-items:center;box-shadow:var(--shadow-soft)}
+.radius-badge{margin-inline:auto;width:clamp(156px,42vw,186px);height:clamp(156px,42vw,186px);border-radius:50%;background:radial-gradient(circle at 50% 42%,var(--sky),var(--blue));color:#fff;display:grid;place-content:center;text-align:center;line-height:1.3;box-shadow:0 22px 46px -22px rgba(47,110,155,.75)}
+.radius-badge .rk{font-size:.76rem;font-weight:700;opacity:.95}
+.radius-badge .rn{font-family:var(--serif);font-weight:900;font-size:2.9rem;line-height:1;margin:.06em 0}
+.radius-badge .rn .ru{font-size:.4em;margin-left:.06em}
+.radius-badge .rt{font-size:.84rem;font-weight:500}
+.radius-badge .rt b{font-family:var(--serif);font-weight:900;font-size:1.08em}
+.area-text p{font-size:1.05rem;line-height:2.05;color:var(--ink)}
+.area-text p b{font-weight:700;color:var(--ink)}
+.area-text .area-hl{background:linear-gradient(transparent 58%,var(--cream-3) 58%)}
+.area-text .area-note{margin-top:.8em;font-size:.9rem;color:var(--ink-soft)}
+.area-alt{background:linear-gradient(180deg,#FBF7EE,#fff);border:1px solid var(--gold-soft);border-radius:20px;padding:clamp(22px,3.2vw,34px);display:flex;gap:1.1em;align-items:flex-start;box-shadow:var(--shadow-soft)}
+.area-alt .alt-ic{flex:none;width:54px;height:54px;border-radius:15px;background:var(--cream-3);color:var(--gold);display:grid;place-content:center}
+.area-alt .alt-ic svg{width:28px;height:28px}
+.area-alt .alt-ttl{font-family:var(--serif);font-weight:700;font-size:1.14rem;color:var(--ink);margin-bottom:.45em;line-height:1.6}
+.area-alt p{font-size:1rem;line-height:1.95;color:var(--ink-soft)}
+.area-alt p b{color:var(--ink);font-weight:700;background:linear-gradient(transparent 60%,var(--cream-3) 60%)}
+@media(min-width:720px){.area-main{grid-template-columns:auto 1fr}}
+
 /* ============ Q&A ============ */
 .faq{background:var(--cream)}
 .faq-list{max-width:780px;margin:0 auto;border-top:1px solid var(--line)}
@@ -443,6 +465,37 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.5;letter-spac
         <span class="btn btn-soon" aria-disabled="true"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.7 2 10.26c0 4.08 3.55 7.5 8.34 8.15.32.07.77.21.88.49.1.25.07.64.03.9l-.14.85c-.04.25-.2.99.87.54s5.77-3.4 7.87-5.82C21.27 13.7 22 12.04 22 10.26 22 5.7 17.52 2 12 2Z"/></svg>公式LINE<span class="tag">準備中</span></span>
       </div>
       <p class="loss"><b>この半額は、はじめての方限定</b>です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 出張エリア ============ -->
+<section class="section area" id="area">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">出張エリア</span>
+      <h2>宇美町を中心に、<br>あなたの家まで伺います。</h2>
+    </div>
+    <div class="area-grid">
+      <div class="area-main reveal">
+        <div class="radius-badge">
+          <span class="rk">宇美町光正寺から</span>
+          <span class="rn">10<span class="ru">km</span></span>
+          <span class="rt">圏内は<b>出張費0円</b></span>
+        </div>
+        <div class="area-text">
+          <p><span class="nb"><b>宇美町光正寺</b>を中心に、</span><span class="nb"><b class="area-hl">半径10km圏内は出張費が無料</b>です。</span></p>
+          <p>それより先のエリアへも、喜んで伺います。その場合のみ、<b>別途交通費</b>を頂戴します。（糟屋郡〜福岡市東区が目安です）</p>
+          <p class="area-note">※ お住まいがエリア内かどうか・交通費の目安は、お電話でお気軽にお尋ねください。</p>
+        </div>
+      </div>
+      <div class="area-alt reveal d1">
+        <div class="alt-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.1 2.8 10.3c-.32.25-.14.72.26.72H5v9.05c0 .35.28.63.63.63H9.7V15.1h4.6v5.28h4.07c.35 0 .63-.28.63-.63V11.02h1.94c.4 0 .58-.47.26-.72L12 3.1Z"/></svg></div>
+        <div class="alt-body">
+          <div class="alt-ttl">「家に来てもらうのは、ちょっと不安…」という方へ</div>
+          <p>ご自宅や職場にお呼びするのは不安、という方には、<b>宇美町のレンタルスペース</b>をご案内できます。まずは外で一度お会いしてから――という形でも大丈夫です。ご希望をお聞かせください。</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
