@@ -132,6 +132,12 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.5;letter-spac
 .phero-media .ribbon .k{font-family:var(--serif);color:var(--blue);font-size:.78rem;font-weight:700}
 .phero-media .ribbon .t{font-family:var(--serif);font-weight:900;font-size:1.45rem;color:var(--ink)}
 .phero-media .ph-note{position:absolute;top:10px;right:10px;background:rgba(176,141,79,.92);color:#fff;font-size:.68rem;font-weight:700;padding:.3em .7em;border-radius:8px}
+/* スマホHERO：白垣さんの表情を挨拶直後に見せてフックに（PCは右カラムの写真を維持）*/
+.phero-media--m{display:none}
+@media(max-width:819.98px){
+  .phero-grid>.phero-media{display:none}
+  .phero-media--m{display:block;max-width:clamp(236px,64vw,320px);margin:clamp(14px,4vw,20px) auto clamp(20px,5vw,28px)}
+}
 
 /* ============ プロフィール＋信念 ============ */
 .profile{background:var(--cream)}
@@ -335,6 +341,10 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.5;letter-spac
       <span class="eyebrow">宇美町・粕屋の出張整体 しろのて</span>
       <h1>こんにちは、<br><span class="nm">白垣</span>です。</h1>
       <p class="hello-sub"><span class="nb">あなたの家まで、</span><span class="nb">僕が伺います。</span></p>
+      <div class="phero-media phero-media--m">
+        <div class="frame"><img src="images/practitioner.png" alt="出張整体しろのて 施術者 白垣誠弥"></div>
+        <div class="ribbon"><span class="k">Therapist</span><span class="t">白垣 誠弥</span></div>
+      </div>
       <p class="lead"><span class="nb">肩・腰・膝のお悩み、</span><span class="nb">「もう何年も…」という方へ。</span><span class="nb">通わなくて大丈夫です。</span></p>
       <p class="lead lead2"><span class="nb"><b>住み慣れたお部屋で、</b></span><span class="nb"><b>僕がていねいに整えます。</b></span><span class="nb">受けたあとは、</span><span class="nb">そのままおやすみください。</span></p>
       <div class="proof">
