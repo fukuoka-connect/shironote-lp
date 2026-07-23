@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="qhCY9iDNi5tvD10npU_DwvN63AcECkizjdIuzqeqAvQ" />
 <!-- Google tag (gtag.js) — GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7SW2KCWJ8S"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G94F5JYH65"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-7SW2KCWJ8S');
+  gtag('config', 'G-G94F5JYH65');
 </script>
 <title>出張整体しろのて｜宇美町・粕屋の出張整体・マッサージ｜白垣誠弥があなたの家へ</title>
 <meta name="description" content="宇美町・粕屋の出張整体しろのて。施術者・白垣誠弥があなたの家まで伺います。整えた体を動かさず、そのまま定着。整骨院やマッサージでラクにならなかった長年の肩・腰・膝のお悩みに、同じ手でずっと寄り添います。60分/90分/120分・出張費込。糟屋郡〜福岡市東区へ出張。ご予約はお電話・公式LINEで。">
@@ -20,6 +20,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/practitioner.png">
 <meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://fukuoka-connect.github.io/shironote-lp/">
 <meta name="theme-color" content="#2F6E9B">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -335,7 +336,7 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.5;letter-spac
 </header>
 
 <!-- ============ FV：人ヒーロー ============ -->
-<section class="phero">
+<section class="phero" id="hero">
   <div class="phero-blob" aria-hidden="true"></div>
   <div class="wrap phero-grid">
     <div class="phero-copy">
@@ -372,7 +373,7 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.5;letter-spac
 </section>
 
 <!-- ============ プロフィール＋信念 ============ -->
-<section class="section profile">
+<section class="section profile" id="profile">
   <div class="wrap inner">
     <h2 class="reveal">はじめまして。<br><span class="nb">白垣 誠弥</span><span class="nb"><span class="yomi">（しらがき せいや）</span>です。</span></h2>
     <p class="sig-name reveal">出張整体 しろのて ／ 施術歴9年</p>
@@ -389,7 +390,7 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.5;letter-spac
 </section>
 
 <!-- ============ お悩み ============ -->
-<section class="section worries">
+<section class="section worries" id="worries">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">こんなお悩みに</span>
@@ -410,7 +411,7 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.5;letter-spac
 </section>
 
 <!-- ============ お客様の声（白垣さんへ）============ -->
-<section class="section voices">
+<section class="section voices" id="voices">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">受けた方の声</span>
@@ -513,7 +514,7 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.5;letter-spac
 </section>
 
 <!-- ============ Q&A ============ -->
-<section class="section faq">
+<section class="section faq" id="faq">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">よくあるご質問</span>
@@ -578,9 +579,71 @@ document.querySelectorAll('.faq-item').forEach(item=>{
   q.addEventListener('click',()=>{
     const open=item.classList.contains('open');
     document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null;});
-    if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+    if(!open){
+      item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';
+      gtag('event', 'faq_open', {
+        event_category: 'engagement',
+        event_label: q.textContent.replace(/\s+/g, ' ').trim().slice(0, 60)
+      });
+    }
   });
 });
+
+/* ===== GA4 カスタムイベント（FUKUOKA CONNECT標準） ===== */
+// ① LINE CTA クリック
+document.querySelectorAll('a[href*="lin.ee"]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    gtag('event', 'line_cta_click', {
+      event_category: 'conversion',
+      event_label: btn.textContent.trim().slice(0, 60),
+      event_location: btn.closest('section')?.id || 'header'
+    });
+  });
+});
+
+// ② 電話CTA クリック
+document.querySelectorAll('a[href^="tel:"]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    gtag('event', 'tel_cta_click', {
+      event_category: 'conversion',
+      event_label: '電話',
+      event_location: btn.closest('section')?.id || 'header'
+    });
+  });
+});
+
+// ③ スクロール深度（25/50/75/100%）
+const depths = [25, 50, 75, 100];
+const reached = new Set();
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY + window.innerHeight;
+  const total = document.body.scrollHeight;
+  const pct = Math.round((scrolled / total) * 100);
+  depths.forEach(d => {
+    if (pct >= d && !reached.has(d)) {
+      reached.add(d);
+      gtag('event', 'scroll_depth', {
+        event_category: 'engagement',
+        event_label: d + '%'
+      });
+    }
+  });
+}, { passive: true });
+
+// ④ セクション到達
+const sections = document.querySelectorAll('section[id]');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      gtag('event', 'section_view', {
+        event_category: 'engagement',
+        event_label: e.target.id
+      });
+      sectionObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(s => sectionObserver.observe(s));
 </script>
 </body>
 </html>
