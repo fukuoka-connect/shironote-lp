@@ -136,10 +136,11 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.5;letter-spac
 /* ============ サービス説明 ============ */
 .service{background:var(--cream)}
 .service-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:900px;margin:0 auto}
-.service-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(20px,3vw,28px);display:flex;gap:1em;align-items:flex-start;box-shadow:var(--shadow-soft)}
-.service-card .ic{flex:none;width:48px;height:48px;border-radius:14px;background:var(--cream-3);color:var(--gold);display:grid;place-content:center}
-.service-card .ic svg{width:24px;height:24px}
-.service-card .ttl{font-family:var(--serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:.4em}
+.service-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(20px,3vw,28px);box-shadow:var(--shadow-soft)}
+.service-card .chead{display:flex;gap:.8em;align-items:center;margin-bottom:.6em}
+.service-card .ic{flex:none;width:44px;height:44px;border-radius:14px;background:var(--cream-3);color:var(--gold);display:grid;place-content:center}
+.service-card .ic svg{width:22px;height:22px}
+.service-card .ttl{font-family:var(--serif);font-weight:700;font-size:1.1rem;color:var(--ink)}
 .service-card p{font-size:.98rem;line-height:1.9;color:var(--ink-soft)}
 @media(min-width:720px){.service-grid{grid-template-columns:1fr 1fr}}
 
@@ -273,23 +274,31 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.5;letter-spac
     </div>
     <div class="service-grid">
       <div class="service-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.1 2.8 10.3c-.32.25-.14.72.26.72H5v9.05c0 .35.28.63.63.63H9.7V15.1h4.6v5.28h4.07c.35 0 .63-.28.63-.63V11.02h1.94c.4 0 .58-.47.26-.72L12 3.1Z"/></svg></div>
-        <div class="ttl">通院不要・自宅で完結</div>
+        <div class="chead">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.1 2.8 10.3c-.32.25-.14.72.26.72H5v9.05c0 .35.28.63.63.63H9.7V15.1h4.6v5.28h4.07c.35 0 .63-.28.63-.63V11.02h1.94c.4 0 .58-.47.26-.72L12 3.1Z"/></svg></div>
+          <div class="ttl">通院不要・自宅で完結</div>
+        </div>
         <p>ベッド・タオル・道具一式はすべて施術者が持参します。宇美町のご自宅の一室で、通院と同じ本格施術が受けられます。</p>
       </div>
       <div class="service-card reveal d1">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm1 15h-2v-2h2v2Zm2.07-7.75-.9.92C13.45 11.9 13 12.5 13 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25Z"/></svg></div>
-        <div class="ttl">同じ手が毎回、原因から見極める</div>
+        <div class="chead">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm1 15h-2v-2h2v2Zm2.07-7.75-.9.92C13.45 11.9 13 12.5 13 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25Z"/></svg></div>
+          <div class="ttl">同じ手が毎回、原因から見極める</div>
+        </div>
         <p>担当は毎回同じ白垣誠弥ひとり。施術歴9年、体のクセを覚えた同じ手で、肩・腰・膝の不調を原因から見極めて整えます。</p>
       </div>
       <div class="service-card reveal d2">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"/></svg></div>
-        <div class="ttl">受けたあと、そのまま休める</div>
+        <div class="chead">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"/></svg></div>
+          <div class="ttl">受けたあと、そのまま休める</div>
+        </div>
         <p>施術後に立って歩いて帰る必要がないので、整えた体が崩れにくいのが出張整体ならでは。受けたあとはそのまま横になれます。</p>
       </div>
       <div class="service-card reveal d3">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 2 7l10 5 10-5-10-5Zm0 8L2 15l10 5 10-5-10-5Z"/></svg></div>
-        <div class="ttl">出張費込みでわかりやすい料金</div>
+        <div class="chead">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 2 7l10 5 10-5-10-5Zm0 8L2 15l10 5 10-5-10-5Z"/></svg></div>
+          <div class="ttl">出張費込みでわかりやすい料金</div>
+        </div>
         <p>宇美町光正寺から10km圏内は出張費0円。追加費用の心配なく、表示された料金だけでご利用いただけます。</p>
       </div>
     </div>
